@@ -2,6 +2,7 @@ import {
   ChartBarIcon,
   CogIcon,
   InformationCircleIcon,
+  PlusCircleIcon
 } from '@heroicons/react/outline'
 import { GAME_TITLE } from '../../constants/strings'
 
@@ -9,12 +10,14 @@ type Props = {
   setIsInfoModalOpen: (value: boolean) => void
   setIsStatsModalOpen: (value: boolean) => void
   setIsSettingsModalOpen: (value: boolean) => void
+  setIsCreateModalOpen: (value: boolean) => void
 }
 
 export const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
   setIsSettingsModalOpen,
+  setIsCreateModalOpen,
 }: Props) => {
   return (
     <div className="navbar">
@@ -30,8 +33,12 @@ export const Navbar = ({
             onClick={() => setIsStatsModalOpen(true)}
           />
           <CogIcon
-            className="h-6 w-6 cursor-pointer dark:stroke-white"
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
             onClick={() => setIsSettingsModalOpen(true)}
+          />
+          <PlusCircleIcon
+            className="h-6 w-6 cursor-pointer dark:stroke-white"
+            onClick={() => setIsCreateModalOpen(true)}
           />
         </div>
       </div>
