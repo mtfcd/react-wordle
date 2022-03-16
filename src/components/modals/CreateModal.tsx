@@ -29,10 +29,11 @@ export const InputRow = ({input}: InputRowProps) => {
 
 type Props = {
   isOpen: boolean
-  handleClose: () => void
+  handleClose: () => void,
+  wordLength: number
 }
 
-export const CreateModal = ({ isOpen, handleClose }: Props) => {
+export const CreateModal = ({ isOpen, handleClose, wordLength }: Props) => {
   const [input, setInput] = useState('');
   const [problemURL, setProblemURL] = useState('');
 
@@ -64,7 +65,9 @@ export const CreateModal = ({ isOpen, handleClose }: Props) => {
           onDelete={onDelete}
           onEnter={onEnter}
           guesses={[]}
+          guessRes={[]}
           isRevealing={false}
+          wordLength={wordLength}
         />
       </div>
     </BaseModal>

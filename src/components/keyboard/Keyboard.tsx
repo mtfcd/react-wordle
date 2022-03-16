@@ -9,7 +9,9 @@ type Props = {
   onDelete: () => void
   onEnter: () => void
   guesses: string[]
-  isRevealing?: boolean
+  isRevealing?: boolean,
+  wordLength: number,
+  guessRes: number[][]
 }
 
 export const Keyboard = ({
@@ -18,8 +20,10 @@ export const Keyboard = ({
   onEnter,
   guesses,
   isRevealing,
+  wordLength,
+  guessRes
 }: Props) => {
-  const charStatuses = getStatuses(guesses)
+  const charStatuses = getStatuses(guesses, guessRes)
 
   const onClick = (value: string) => {
     if (value === 'ENTER') {
@@ -61,6 +65,7 @@ export const Keyboard = ({
             onClick={onClick}
             status={charStatuses[key]}
             isRevealing={isRevealing}
+            wordLength={wordLength}
           />
         ))}
       </div>
@@ -72,6 +77,7 @@ export const Keyboard = ({
             onClick={onClick}
             status={charStatuses[key]}
             isRevealing={isRevealing}
+            wordLength={wordLength}
           />
         ))}
       </div>
@@ -86,6 +92,7 @@ export const Keyboard = ({
             onClick={onClick}
             status={charStatuses[key]}
             isRevealing={isRevealing}
+            wordLength={wordLength}
           />
         ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
