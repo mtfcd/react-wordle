@@ -8,7 +8,7 @@ type ProblemResp = {
 
 export const createProblem = async (word: string) => {
   const res = await fetch(
-    `${API_HOST}/create?word=${word}`, 
+    `${API_HOST}/api/create?word=${word}`, 
     {
       method: 'POST',
     }
@@ -28,7 +28,7 @@ type GuessesResp = {
 
 export const getGuessesByGameId = async (id: number) => {
   const res = await fetch(
-    `${API_HOST}/getGuesses?id=${id}`, 
+    `${API_HOST}/api/getGuesses?id=${id}`, 
     {
       method: 'GET',
     }
@@ -44,7 +44,7 @@ type CheckResp = {
 }
 export const checkGuess = async (id: string, guess: string, line: number) => {
   const res = await fetch(
-    `${API_HOST}/check?id=${id}&guess=${guess}&line=${line}`, 
+    `${API_HOST}/api/check?id=${id}&guess=${guess}&line=${line}`, 
     {
       method: 'GET',
     }
@@ -61,7 +61,7 @@ type ProblemLenResp = {
 
 export const getProblem = async (id: string) => {
   const res = await fetch(
-    `${API_HOST}/getProblem?id=${id}`, 
+    `${API_HOST}/api/getProblem?id=${id}`, 
     {
       method: 'GET',
     }
