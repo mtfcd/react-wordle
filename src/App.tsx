@@ -215,13 +215,6 @@ function App() {
       }
     }
 
-    setIsRevealing(true)
-    // turn this back off after all
-    // chars have been revealed
-    setTimeout(() => {
-      setIsRevealing(false)
-    }, REVEAL_TIME_MS * wordLength)
-
     const guessRes = await isWinningWord(currentGuess, guesses.length + 1)
     if (!guessRes) {
       return showErrorAlert('server error', {
@@ -234,6 +227,14 @@ function App() {
         onClose: clearCurrentRowClass,
       })
     }
+
+    setIsRevealing(true)
+    // turn this back off after all
+    // chars have been revealed
+    setTimeout(() => {
+      setIsRevealing(false)
+    }, REVEAL_TIME_MS * wordLength)
+
     if (
       unicodeLength(currentGuess) === wordLength &&
       guesses.length < MAX_CHALLENGES &&
