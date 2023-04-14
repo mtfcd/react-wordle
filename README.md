@@ -1,8 +1,11 @@
 # React Wordle
 
+forked from https://github.com/cwackerfuss/react-wordle
+
+blow is readme from orignal repo.
+
 This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
 
-[**Try out the demo!**](https://reactle.vercel.app/)
 
 ## Build and run
 
@@ -130,12 +133,6 @@ Open [http://localhost](http://localhost) in browser.
 _Want to add one to the list? Just make a pull request or [let us know via a comment here](https://github.com/cwackerfuss/react-wordle/issues/120)_
 
 ## FAQ
-
-### How can I change the length of a guess?
-
-- Update the `MAX_WORD_LENGTH` variable in [src/constants/settings.ts](src/constants/settings.ts) to the desired length.
-- Update the `WORDS` array in [src/constants/wordlist.ts](src/constants/wordlist.ts) to only include words of the new length.
-- Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) arrays to only include words of the new length.
 
 ### How can I create a version in another language?
 
